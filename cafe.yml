@@ -1,0 +1,112 @@
+origin: cafe_de_touhou.mp3
+album_artist: DDBY
+format: mp3
+
+albums:
+  -
+    title: Cafe de Touhou
+    year: 2010
+    # artist: DDBY
+    parts:
+      -
+        name: 'もし、空が晴れるなら'
+        file: 'If the sky clears'
+        artist: Bizen
+        from: '0:0'
+        to: '4:14'
+      -
+        name: 'faraway country'
+        # from: 'last'
+        artist: 鯛の小骨
+        to: '9:15'
+      -
+        name: 'Jam from memories of winter'
+        artist: ぴーえー
+        to: '13:27'
+      -
+        name: 'Perfect Day Dream'
+        artist: ししまい3号
+        to: '17:49'
+      -
+        name: '暖色系アリス'
+        file: 'Alice of the Warm Colors Spectrum'
+        artist: koutaq
+        to: '21:26'
+      -
+        name: '風の都'
+        file: 'Wind Capital'
+        artist: Bizen
+        to: '24:48'
+      -
+        name: '無何有の郷（KiRa Remix）'
+        file: 'Paradise (KiRa Remix)'
+        artist: Coro
+        to: '29:01'
+      -
+        name: NaTuLaL AGeNcY
+        artist: すみじゅん
+        to: '32:57'
+      -
+        name: Below Between Beyond
+        artist: Ludo
+        to: '38:00'
+      -
+        name: Sky Garden
+        artist: Takayan
+        to: '43:14'
+      -
+        name: Lotus
+        artist: KA=YA
+        to: '48:50'
+  -
+    title: Cafe de Touhou 2
+    year: 2011
+    parts:
+      -
+        name: Seaside
+        artist: Bizen
+        from: '48:56'
+        to: '52:05'
+      -
+        name: unknown.your smile
+        artist: ぴーえー
+        to: '57:08'
+      -
+        name: 濡れた素肌に
+        file: In My Soaking Body
+        artist: ししまい3号
+        to: '60:08'
+      -
+        name: かんぱんバカンス
+        file: Cracker Holidays
+        artist: 鯛の小骨
+        to: '65:05'
+      -
+        name: Romance for you
+        artist: ひろさわけんぢ
+        to: '69:08'
+      -
+        name: Skyscraper of Horizon
+        artist: OdiakeS
+        to: '73:08'
+      -
+        name: Prime Star
+        artist: KA=YA
+        to: '78:16'
+      -
+        name: 流星階段
+        file: Stairway of Shooting Stars
+        artist: Bizen
+        to: '81:16'
+      -
+        name: SEAMOON
+        artist: NOAH
+        to: '86:07'
+      -
+        name: Old under the sun
+        artist: Takayan
+        to: '90:10'
+      -
+        name: Blue Wings
+        artist: F
+        to: '94:30'
