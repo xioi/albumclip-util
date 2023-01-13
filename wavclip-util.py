@@ -5,7 +5,7 @@ import yaml
 import taglib
 
 def time_to_second( t):
-    return t[0] * 60 + t[1]
+    return t[0] * 3600 + t[1] * 60 + t[2]
 
 def clip_audio( src, dst, t1, t2, format):
     rt1 = t1 * 1000
@@ -20,10 +20,19 @@ def load_configure( filename):
 
 def parse_time( str):
     processed = str.split( ':')
-    minute = processed[0]
-    second = processed[1]
+    hour = 0
+    minute = 0
+    second = 0
 
-    return ( int( minute), int( second))
+    if( len( processed) == 3):
+        hour = processed[0]
+        minute = processed[1]
+        second = processed[2]
+    else:
+        minute = processed[0]
+        second = processed[1]
+
+    return ( int( hour), int( minute), int( second))
 
 parser = argparse.ArgumentParser( 
     prog = 'wavclip-util',
