@@ -48,13 +48,12 @@ albums:
         to: '80:00'
 #......
 ```
-This example will produce 3 files: B.wav, C.wav and Foo.wav
-(cafe.yml is a good example)
-
 After that, run it to split file.
 ```
 python3 wavclip-util.py cafe.yml
 ```
+This example will produce 3 files: B.wav, C.wav and Foo.wav
+
 Default output directory is ".", add "-d <directory>" to change it.
 ```
 python3 wavclip-util.py cafe.yml -d cafe
