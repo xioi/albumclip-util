@@ -60,4 +60,8 @@ Default output directory is ".", add "-d <directory>" to change it.
 python3 wavclip-util.py cafe.yml -d cafe
 ```
 
-'cafe.yml' is an example including 2 albums, the origin audio file is of [here](https://www.youtube.com/watch?v=RY7FpB9BZH4).
+'[cafe.yml](cafe.yml)' is an example including 2 albums, the origin audio file is of [here](https://www.youtube.com/watch?v=RY7FpB9BZH4).
+
+## License
+
+The whole project (wavclip-util.py and cafe.yml) is released under CC-BY-NC 4.0 license.
