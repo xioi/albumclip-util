@@ -34,7 +34,7 @@ albums:
         artist: Y      # specialized artist name, defaultly album artist
         from: '00:00'  # start time in the whole file, optional
                        # defaultly the last song's end time or 00:00 (if first song)
-        to: '63:13'    # end time in the whole file, required
+        to: '1:3:13'  # end time in the whole file, required
       -
         name: B
         file: C
@@ -45,7 +45,7 @@ albums:
     parts:
       -
         name: Foo
-        to: '80:00'
+        to: '1:20:00'
 #......
 ```
 After that, run it to split file.
