@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from pydub import AudioSegment
 import os
 import argparse
@@ -18,7 +19,7 @@ def load_configure( filename):
         yml_dat = yaml.safe_load( file)
     return yml_dat
 
-# parse time string like "0:0" or "0:0:0" to tuple
+# parse time string like "0:0" or "0:0:0" to tuple ( hour, minute, second)
 def parse_time( str):
     processed = str.split( ':')
     hour = 0
@@ -37,7 +38,7 @@ def parse_time( str):
 
 parser = argparse.ArgumentParser( 
     prog = 'wavclip-util',
-    description = 'Utility program to clip a wav file into several ones, using a yaml as cinfiguration.',
+    description = 'Utility program to clip a wav file into several ones, using a yaml file as coniguration.',
     usage = 'wavclip-util <configure>.yaml [-d|--directory <outpur directory>]')
 
 parser.add_argument( 'filename')
@@ -97,7 +98,7 @@ wav_source = cfg['origin']
 print( 'Loading packed file', wav_source)
 origin_wav = AudioSegment.from_file( wav_source) # Load the origin audio file
 
-last_point = (0, 0) # last timestamp point globally
+last_point = (0, 0, 0) # last timestamp point globally
 
 # Create output directory if doesn't exist
 if( not os.path.exists( output_dir)):
