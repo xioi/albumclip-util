@@ -19,17 +19,17 @@ And the syntax is as follows:(This is a part of [cafe.yml](cafe.yml))
 origin: cafe_de_touhou.mo3         # the big origin file, required
 format: mp3                        # output format, always extensions such as mp3, defaultly "wav", optional
 
-year: 1978                         # the published year of all albums, globally, optional
+year: 2010                         # the published year of all albums, globally, optional
 album_artist: DDBY                 # set the default album artist of all albums, optional
 
 albums:
   -
     title: Cafe de Touhou          # album name, required
     album_artist: DDBY             # album artist, optional
-    year: 2010                     # published year, optional
+    # year: 2010                   # published year, defaultly the global one, optional
     parts:
       -
-        name: もし、空が晴れるなら    # title of this song, required
+        name: もし、空が晴れるなら # title of this song, required
         file: If the sky clears    # specialized file name, excluding suffix, optional
         artist: Bizen              # specialized artist name, defaultly album artist
         # from: '0:0'              # start time in the whole file, optional
