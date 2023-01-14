@@ -18,6 +18,7 @@ def load_configure( filename):
         yml_dat = yaml.safe_load( file)
     return yml_dat
 
+# parse time string like "0:0" or "0:0:0" to tuple
 def parse_time( str):
     processed = str.split( ':')
     hour = 0
@@ -44,20 +45,16 @@ parser.add_argument( '-d', '--directory', default = '.', required = False)
 args = parser.parse_args()
 # print( args.filename)
 
-cfg = load_configure( args.filename)
-output_dir = args.directory
+cfg = load_configure( args.filename)    # Load current configuration file
+output_dir = args.directory             # Output directory, defaultly "."
 
 format = cfg['format'] if ('format' in cfg) else 'wav'
 global_album_artist = cfg['album_artist'] if ('album_artist' in cfg) else ''
 global_album_year = cfg['year'] if ('year' in cfg) else 0
-# album_title = cfg['album'] if ('album' in cfg) else ''
-# album_artist = cfg['artist'] if ('artist' in cfg) else ''
-
-# will_add_metadata = (album_artist != '') or (album_title != '')
 
 def export_album( source, album, global_last_point):
     cur_track = 1
-    wav_parts = album['parts']
+    wav_parts = album['parts']    # songs of an album
     
     last_point = global_last_point
 
@@ -75,9 +72,9 @@ def export_album( source, album, global_last_point):
 
         last_point = end_point
         print( ' ', name, 'by', album_artist if (artist == '') else artist, '-->', filename)
-        # print( name, filename, start_point, end_point)
         clip_audio( origin_wav, filename, time_to_second( start_point), time_to_second( end_point), format)
 
+        # Add metadata for this song
         tfile = taglib.File( filename)
         tfile.tags['TITLE'] = name
         tfile.tags['TRACKNUMBER'] = str( cur_track)
@@ -96,18 +93,17 @@ def export_album( source, album, global_last_point):
     return last_point
 
 wav_source = cfg['origin']
-# wav_parts = cfg['parts']
 
 print( 'Loading packed file', wav_source)
-origin_wav = AudioSegment.from_file( wav_source)
+origin_wav = AudioSegment.from_file( wav_source) # Load the origin audio file
 
-last_point = (0, 0)
-# current_track = 0
+last_point = (0, 0) # last timestamp point globally
 
 # Create output directory if doesn't exist
 if( not os.path.exists( output_dir)):
     os.makedirs( output_dir)
 
+# Get the whole album configurations
 albums = cfg['albums']
 for album in albums:
     album_title = album['title']
