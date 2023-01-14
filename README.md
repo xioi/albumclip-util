@@ -29,7 +29,7 @@ albums:
     year: 2010                     # published year, optional
     parts:
       -
-        name: もし、空が晴れるなら # title of this song, required
+        name: もし、空が晴れるなら    # title of this song, required
         file: If the sky clears    # specialized file name, excluding suffix, optional
         artist: Bizen              # specialized artist name, defaultly album artist
         # from: '0:0'              # start time in the whole file, optional
