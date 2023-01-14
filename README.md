@@ -1,4 +1,4 @@
-# wavclip-util
+# albumclip-util
 
 ## Overview
 
@@ -14,53 +14,54 @@ pytaglib
 ```
 ## Usage
 To split the audio properly, a configuration file, which is written in YAML, is required.
-And the basic structure is as follows:
+And the syntax is as follows:(This is a part of [cafe.yml](cafe.yml))
 ```yaml
-origin: xxx.wav        # the big origin file, required
-format: wav            # output format, always extensions such as mp3, defaultly "wav", optional
+origin: cafe_de_touhou.mo3         # the big origin file, required
+format: mp3                        # output format, always extensions such as mp3, defaultly "wav", optional
 
-year: 2022             # the published year of all albums, globally, optional
-album_artist: X        # set the default album artist of all albums, optional
+year: 1978                         # the published year of all albums, globally, optional
+album_artist: DDBY                 # set the default album artist of all albums, optional
 
 albums:
   -
-    title: XXX         # album name, required
-    album_artist: Z    # album artist, optional
-    year: 2023         # published year, optional
+    title: Cafe de Touhou          # album name, required
+    album_artist: DDBY             # album artist, optional
+    year: 2010                     # published year, optional
     parts:
       -
-        name: A        # title of this song, required
-        file: B        # specialized file name, excluding suffix, optional
-        artist: Y      # specialized artist name, defaultly album artist
-        from: '00:00'  # start time in the whole file, optional
-                       # defaultly the last song's end time or 00:00 (if first song)
-        to: '1:3:13'   # end time in the whole file, required
+        name: もし、空が晴れるなら # title of this song, required
+        file: If the sky clears    # specialized file name, excluding suffix, optional
+        artist: Bizen              # specialized artist name, defaultly album artist
+        # from: '0:0'              # start time in the whole file, optional
+                                   # defaultly the last song's end time or 00:00 (if first song)
+        to: '4:14'                 # end time in the whole file, required
       -
-        name: B
-        file: C
-        artist: Y & X
-        to: '67:00'
+        name: faraway country
+        artist: 鯛の小骨
+        to: '9:15'
   -
-    title: YYY
+    title: Cafe de Touhou 2
+    year: 2011
     parts:
       -
-        name: Foo
-        to: '1:20:00'
+        name: かんぱんバカンス
+        file: Cracker Holidays
+        artist: 鯛の小骨
+        from: '1:00:08'
+        to: '1:05:05'
 #......
 ```
 After that, run it to split file.
 ```
-python3 wavclip-util.py cafe.yml
+python3 albumclip-util.py cafe.yml
 ```
-This example will produce 3 files: B.wav, C.wav and Foo.wav
-
 Default output directory is ".", add "-d <directory>" to change it.
 ```
-python3 wavclip-util.py cafe.yml -d cafe
+python3 albumclip-util.py cafe.yml -d cafe
 ```
 
-'[cafe.yml](cafe.yml)' is an example including 2 albums, the origin audio file is of [here](https://www.youtube.com/watch?v=RY7FpB9BZH4).
+The origin audio file of [cafe.yml](cafe.yml) is [here](https://www.youtube.com/watch?v=RY7FpB9BZH4).
 
 ## License
 
-The whole project (wavclip-util.py and cafe.yml) is released under CC-BY-NC 4.0 license.
+The whole project (albumclip-util.py and cafe.yml) is released under CC-BY-NC 4.0 license.
